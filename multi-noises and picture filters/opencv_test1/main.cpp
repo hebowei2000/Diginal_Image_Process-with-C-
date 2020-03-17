@@ -12,6 +12,10 @@ using namespace std;
 
 Mat MeanImage, MedianImage;
 Mat Img, Img_raw;
+Mat img_out1;
+Mat img_out2;
+Mat img_out3;
+Mat img_out4;
 int g_nMeanBlurvalue = 5; //Mean filter kernel value
 int g_nMedianBlurvalue = 5; // Median filter kernel value
 
@@ -27,8 +31,8 @@ static void on_MedianBlur(int, void*);
 int main(int argc, char** argv)
 {
 	//read the raw image from Desktop
-	Img = imread("C:/Users/hebowei2000/Desktop/lena.bmp", 0);
-	Img_raw = imread("C:/Users/hebowei2000/Desktop/lena.bmp", 0);
+	Img = imread("C:/Users/hebowei2000/Desktop/lena.bmp");
+	Img_raw = imread("C:/Users/hebowei2000/Desktop/lena.bmp");
 	if (Img.empty())
 	{
 		printf("could not open image\n");
@@ -39,22 +43,22 @@ int main(int argc, char** argv)
 
 	
 	//add the Guassian noise with class RNG
-	Mat img_out1 = addGuassianNoise_withRNG(Img);
+	  img_out1 = addGuassianNoise_withRNG(Img);
 	namedWindow("img_out1");
 	imshow("img_out1", img_out1);
 
 	//add the Guassian noise with pixel-level scanning
-	Mat img_out2 = addGuassianNoise_withscanning(Img);
+	  img_out2 = addGuassianNoise_withscanning(Img);
 	namedWindow("img_out2");
 	imshow("img_out2", img_out2);
 
 	//add the salt and pepper noise 
-	Mat img_out3 = addSaltAndPepperNoise(Img, 3000);
+	 img_out3 = addSaltAndPepperNoise(Img, 3000);
 	namedWindow("img_out3");
 	imshow("img_out3", img_out3);
 
 	//add the Impulse noise
-	Mat img_out4 = addImpulseNoise(Img, 6000);
+	 img_out4 = addImpulseNoise(Img, 6000);
 	namedWindow("img_out4");
 	imshow("img_out4", img_out4);
 
@@ -192,10 +196,10 @@ Mat addImpulseNoise(Mat &Img, int n)
 }
 static void on_MeanBlur(int, void*)
 {
-	blur(Img, MeanImage, Size(g_nMeanBlurvalue + 1, g_nMeanBlurvalue + 1));
+	blur(img_out3, MeanImage, Size(g_nMeanBlurvalue + 1, g_nMeanBlurvalue + 1));
 
 }
 static void on_MedianBlur(int, void*)
 {
-	medianBlur(Img, MedianImage, g_nMedianBlurvalue * 2 + 1);
+	medianBlur(img_out3, MedianImage, g_nMedianBlurvalue * 2 + 1);
 }

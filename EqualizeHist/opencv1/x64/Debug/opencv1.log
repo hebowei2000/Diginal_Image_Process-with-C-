@@ -1,3 +1,3 @@
 ﻿  main.cpp
-c:\users\hebowei2000\documents\visual studio 2017\projects\opencv1\opencv1\main.cpp(77): warning C4244: “=”: 从“double”转换到“uchar”，可能丢失数据
-  opencv1.vcxproj -> C:\Users\hebowei2000\Documents\Visual Studio 2017\Projects\opencv1\x64\Debug\opencv1.exe
+c:\users\hebowei2000\documents\visual studio 2017\projects\diginal_image_process-with-c-\equalizehist\opencv1\main.cpp(77): warning C4244: “=”: 从“double”转换到“uchar”，可能丢失数据
+  opencv1.vcxproj -> C:\Users\hebowei2000\Documents\Visual Studio 2017\Projects\Diginal_Image_Process-with-C-\EqualizeHist\x64\Debug\opencv1.exe
