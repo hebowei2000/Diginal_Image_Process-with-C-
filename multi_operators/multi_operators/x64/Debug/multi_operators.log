@@ -1,0 +1,6 @@
+﻿  main.cpp
+c1xx : warning C4199: C++/CLI、C++/CX 或 OpenMP 不支持两阶段名称查找；请使用 /Zc:twoPhase-
+c:\users\hebowei2000\documents\visual studio 2017\projects\diginal_image_process-with-c-\multi_operators\multi_operators\main.cpp(27): warning C4244: “=”: 从“double”转换到“uchar”，可能丢失数据
+c:\users\hebowei2000\documents\visual studio 2017\projects\diginal_image_process-with-c-\multi_operators\multi_operators\main.cpp(58): warning C4244: “=”: 从“double”转换到“uchar”，可能丢失数据
+c:\users\hebowei2000\documents\visual studio 2017\projects\diginal_image_process-with-c-\multi_operators\multi_operators\main.cpp(89): warning C4244: “=”: 从“double”转换到“uchar”，可能丢失数据
+  multi_operators.vcxproj -> C:\Users\hebowei2000\Documents\Visual Studio 2017\Projects\Diginal_Image_Process-with-C-\multi_operators\x64\Debug\multi_operators.exe
