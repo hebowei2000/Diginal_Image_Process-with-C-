@@ -139,7 +139,7 @@ Mat butterworthlbrf(Mat src, float sigma,int n)
 Mat homoblurf(Mat src, float sigma)
 {   
 	double gammaH = 1.5;
-	double gammaL = 0.5;
+	double gammaL = 0.2;
 	int c = 1;
 	Mat homoblur(src.size(), CV_32FC1);
 	float d0 = 2 * sigma*sigma;//方差越小，频域高斯滤波器越窄，滤除高频成分越多，图像越平滑

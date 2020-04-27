@@ -9,7 +9,7 @@ using namespace cv;
 int main()
 {
 	//读入图像灰度图
-	Mat Img = imread("C:/Users/hebowei2000/Desktop/expe3/rect-move.bmp", IMREAD_GRAYSCALE);
+	Mat Img = imread("C:/Users/hebowei2000/Desktop/expe3/rect-45度.bmp", IMREAD_GRAYSCALE);
 	//判断图像是否加载成功
 	if (Img.empty())
 	{
@@ -31,12 +31,16 @@ int main()
 	merge(planes, 2, complexImg); //将planes融合合并成一个多通道数组complexImg
 	dft(complexImg, complexImg); //进行傅里叶变换
 
+	split(complexImg, planes);
+	Mat real;
+	planes[0].copyTo(real);
+	Mat ima = planes[1];
 	magnitude(planes[0], planes[1], planes[0]);
 	Mat magImg = planes[0];
 
 	magImg += Scalar::all(1);
 	log(magImg, magImg);
-	magImg = magImg(Rect(0, 0, magImg.cols&-2, magImg.rows - 2));
+	magImg = magImg(Rect(0, 0, magImg.cols-2, magImg.rows - 2));
 
 	//重新排列傅里叶图像，是的原点位于图像中心
 	int cx = magImg.cols / 2;
@@ -62,6 +66,8 @@ int main()
 
 	imshow("image", Img);
 	imshow("frequencyspctrum", magImg);
+	imshow("real", real);
+	imshow("ima", ima);
 	waitKey(0);
 	
 
